@@ -1,3 +1,7 @@
+def sort_list_alphabetically(array):
+    return sorted(array)
+
+
 n = eval(raw_input('please enter the number '))
 
 students = []
@@ -22,39 +26,38 @@ sl = []
 if students[0][1] < students[1][1]: 
     min.append(students[0])
     sl.append(students[1])
-    print(min)
-    print(sl)
+    
 
 if students[0][1] == students[1][1]:
     min.append(students[0])
     min.append(students[1])
-    print(min)
-    print()
+    
 
 if students[0][1] > students[1][1]: 
     min.append(students[1])
     sl.append(students[0])
-    print(min)
-    print(sl)
-
-# #find the second lowest degree in student array
-# for i in range(2 , n):
-#     #if the lowest degree in low then the degree 
-#     if min < students[i][1]:
-#         #if the degree is low than the actual lowest degree
-#         if students[i][1] < sl[0][1]:
-#             sl = []
-#             sl[0][1] = students[i][1]
-#         #if the degree is equal to the actual lowest degree
-#         elif students[i][1] = sl[0][1]:
-#             sl[len(sl)] = students[i]
     
-#     elif min[0][1]== tab[i][1]:
-#         min[len(min)] = tab[i]
-    
-#     elif min > tab[i]:
-#         sl = min 
-#         min[0] = tab[i]
 
+#find the second lowest degree in student array
+for i in range(2 , n):
+    #if the lowest degree in low then the degree 
+    if min < students[i][1]:
+        if len(sl) == 0 :
+            sl.append(students[i])
+        #if the degree is low than the actual lowest degree
+        if students[i][1] < sl[0][1]:
+            sl = []
+            sl.append(students[i])
+        #if the degree is equal to the actual lowest degree
+        elif students[i][1] == sl[0][1]:
+            sl.append(students[i])
+    
+    elif min[0][1] == students[i][1]:
+        min[len(min)] = students[i]
+    
+    elif min[0][1] > students[i][1]:
+        sl = min 
+        min = []
+        min.append(students[i])
 
 
