@@ -1,5 +1,7 @@
 import random
 
+
+#DICHOTOMIC SEARCH
 def search():
     turn = 0 
     high = 100
